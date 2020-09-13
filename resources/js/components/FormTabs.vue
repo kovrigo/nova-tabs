@@ -14,16 +14,18 @@
       </div>
     </div>
 
-    <div class="relationship-tabs-panel card w-full overflow-hidden">
-      <div class="flex flex-row">
-        <div
-          class="py-5 px-8 border-b-2 focus:outline-none tab cursor-pointer"
-          :class="[activeTab == tab.name ? 'text-grey-black font-bold border-primary': 'text-grey font-semibold border-40', tabHasErrors(tab) ? 'text-error' : '' ]"
-          v-for="(tab, key) in tabs"
-          :key="key"
-          @click="handleTabClick(tab, $event)"
-        >{{ tab.name }}</div>
-        <div class="flex-1 border-b-2 border-40"></div>
+    <div class="relationship-tabs-panel card overflow-hidden">
+      <div class="tabs-wrap">
+        <div class="flex flex-row tabs">
+          <div
+            class="py-5 px-8 border-b-2 focus:outline-none tab cursor-pointer"
+            :class="[activeTab == tab.name ? 'active': '', tabHasErrors(tab) ? 'text-error' : '' ]"
+            v-for="(tab, key) in tabs"
+            :key="key"
+            @click="handleTabClick(tab, $event)"
+          >{{ tab.name }}</div>
+          <div class="flex-1 border-b-2 border-40"></div>
+        </div>
       </div>
       <div
         v-for="(tab, index) in tabs"

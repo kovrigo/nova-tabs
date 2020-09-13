@@ -6,13 +6,13 @@
     <div class="relationship-tabs-panel card">
       <div class="tabs-wrap border-b-2 border-40 w-full">
         <div class="tabs flex flex-row overflow-x-auto">
-          <button
+          <div
             class="py-5 px-8 border-b-2 focus:outline-none tab"
-            :class="[activeTab == tab.name ? 'text-grey-black font-bold border-primary': 'text-grey font-semibold border-40']"
+            :class="[activeTab == tab.name ? 'active': '']"
             v-for="(tab, key) in tabs"
             :key="key"
             @click="handleTabClick(tab, $event)"
-          >{{ tab.name }}</button>
+          >{{ tab.name }}</div>
         </div>
       </div>
       <div
